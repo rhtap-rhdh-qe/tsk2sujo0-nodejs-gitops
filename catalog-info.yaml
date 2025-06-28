@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tsk2sujo0-nodejs-gitops
+  description: This is GitOps manifest for tsk2sujo0-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=tsk2sujo0-nodejs
+    backstage.io/kubernetes-id: tsk2sujo0-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: tsk2sujo0-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tsk2sujo0-nodejs
